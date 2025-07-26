@@ -13,16 +13,16 @@ def caesar_cipher_decrypt(message, shift):
     return caesar_cipher_encrypt(message, -shift)
 
 
-# Example usage
+
 if __name__ == "__main__":
-    # Input from user
+    
     message = input("Enter the message: ")
     shift = int(input("Enter the shift (e.g. 3): "))
 
-    # Encryption
+    
     encrypted_message = caesar_cipher_encrypt(message, shift)
     print("Encrypted Message:", encrypted_message)
 
-    # Decryption
+    
     decrypted_message = caesar_cipher_decrypt(encrypted_message, shift)
     print("Decrypted Message:", decrypted_message)
