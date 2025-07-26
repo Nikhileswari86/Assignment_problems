@@ -1,34 +1,32 @@
 def format_indian_currency(amount):
-    # Convert to string to handle splitting
+    
     amount_str = str(amount)
     if '.' in amount_str:
         integer_part, decimal_part = amount_str.split('.')
     else:
         integer_part, decimal_part = amount_str, ''
 
-    # Reverse the integer part
+    
     reversed_int = integer_part[::-1]
     result = ''
 
-    # First 3 digits
+    
     result += reversed_int[:3]
 
-    # Then add commas every 2 digits
+    
     for i in range(3, len(reversed_int), 2):
         result += ',' + reversed_int[i:i+2]
 
-    # Reverse the result back
+    
     formatted_int = result[::-1]
 
-    # Add decimal part if it exists
+    
     if decimal_part:
         return formatted_int + '.' + decimal_part
     else:
         return formatted_int
 
-# -------------------------------
-# Main program
-# -------------------------------
+
 if __name__ == "__main__":
     try:
         user_input = input("Enter a number (float or int): ").strip()
